@@ -3,8 +3,23 @@
 import inquirer from "inquirer";
 import chalk from "chalk";
 import ora from "ora";
+import figlet from "figlet";
 
-async function ask() {
+async function generateTitle() {
+  return new Promise((resolve, reject) => {
+    figlet("Startify", (err, data) => {
+      if (err) {
+        reject("Erro ao gerar título");
+      }
+      resolve(data);
+    });
+  });
+}
+
+async function main() {
+  const title = await generateTitle();
+  console.log(chalk.cyan(title));
+
   const response = await inquirer.prompt([
     {
       type: "input",
@@ -33,12 +48,12 @@ async function ask() {
   );
 
   if (response.InstallDependencies) {
-    const spinner = ora('Instalando dependências...').start();
+    const spinner = ora("Instalando dependências...").start();
 
     setTimeout(() => {
-        spinner.succeed('Dependências instaladas com sucesso!')
+      spinner.succeed("Dependências instaladas com sucesso!");
     }, 2000);
   }
 }
 
-ask();
+main();
