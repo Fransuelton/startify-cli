@@ -1,5 +1,5 @@
 {
-  "name": "meu-cli",
+  "name": "startify-cli",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
@@ -11,7 +11,7 @@
   "license": "ISC",
   "description": "",
   "bin": {
-    "meucli": "./index.js"
+    "startify": "./index.js"
   },
   "dependencies": {
     "chalk": "^5.4.1",
