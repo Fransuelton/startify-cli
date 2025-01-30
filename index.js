@@ -2,6 +2,7 @@
 
 import inquirer from "inquirer";
 import chalk from "chalk";
+import ora from "ora";
 
 async function ask() {
   const response = await inquirer.prompt([
@@ -32,7 +33,11 @@ async function ask() {
   );
 
   if (response.InstallDependencies) {
-    // Lógica para instalar dependências aqui
+    const spinner = ora('Instalando dependências...').start();
+
+    setTimeout(() => {
+        spinner.succeed('Dependências instaladas com sucesso!')
+    }, 2000);
   }
 }
 
