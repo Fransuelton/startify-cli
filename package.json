@@ -11,7 +11,7 @@
   "license": "ISC",
   "description": "",
   "bin": {
-    "startify": "./index.js"
+    "startify": "./bin/index.js"
   },
   "dependencies": {
     "chalk": "^5.4.1",
